@@ -275,10 +275,8 @@ a .link.current {
   background-color: var(--footer-color);
 
   text-align: center;
-}
 
-.overlay {
-  max-width: 2000px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
 
@@ -291,6 +289,9 @@ a .link.current {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .hero-heading {
@@ -304,8 +305,6 @@ a .link.current {
   text-transform: uppercase;
 
   color: var(--white-color);
-
-  padding-top: 200px;
 }
 
 .hero-button {
@@ -321,7 +320,6 @@ a .link.current {
 
   padding: 10px 32px;
   margin-top: 30px;
-  margin-bottom: 200px;
 }
 
 .button-center {
@@ -657,7 +655,7 @@ a .link.current {
   width: 16px;
   height: 12px;
   color: var(--white-color);
-  fill: var(--icon-primary-color);
+  fill: var(--primary-text-color);
 }
 
 .phone-icon {
@@ -665,7 +663,7 @@ a .link.current {
   width: 10px;
   height: 16px;
   color: var(--white-color);
-  fill: var(--icon-primary-color);
+  fill: var(--primary-text-color);
 }
 
 /* Эта часть на проверке */
@@ -795,12 +793,6 @@ p {
   outline: 1px solid var(--icon-primary-color);
   border-radius: 4px;
 }
-
-/* .clients a {
-  display: flex;
-  width: 106px;
-  height: 60px;
-} */
 
 .client-icon {
   padding: 12px;
