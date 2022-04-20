@@ -185,6 +185,10 @@ p {
   display: flex;
 }
 
+.site-nav .item {
+  position: relative;
+}
+
 .site-nav .item + .item {
   margin-left: 50px;
 }
@@ -222,6 +226,24 @@ p {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+
+.link.current::after {
+  display: block;
+  position: absolute;
+
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+
+  bottom: -33px;
+}
+
+a .link.current {
+  position: relative;
+}
+
 .contact .link {
   align-items: center;
   display: flex;
