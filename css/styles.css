@@ -209,16 +209,14 @@ p {
   margin-left: 30px;
 }
 
-/* .contact-link:hover,
-.contact-link:focus {
-  color: var(--accent-color);
-  fill: var(--accent-color);
-} */
-
 .site-nav .link {
   padding: 32px 0;
   text-decoration: none;
   color: var(--secondary-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -251,6 +249,10 @@ a .link.current {
   padding: 32px 0;
   text-decoration: none;
   color: var(--primary-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact .link:hover,
 .contact .link:focus {
@@ -453,6 +455,7 @@ a .link.current {
 }
 
 .project-thumb {
+  overflow: hidden;
   position: relative;
 }
 
@@ -466,16 +469,19 @@ a .link.current {
   background-color: rgba(33, 150, 243, 0.9);
 
   opacity: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-thumb p {
+.project-thumb .project-text {
   width: 100%;
   padding: 63px 24px;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(30%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   color: var(--white-color);
 
@@ -483,13 +489,25 @@ a .link.current {
   line-height: 1.55;
 
   opacity: 0;
+
 }
 
-.project-item:hover p {
+.project-cards a:hover .project-text {
+  transform: translate(-50%, -50%);
   opacity: 1;
 }
 
-.project-item:hover .project-thumb::before {
+.project-cards a:hover .project-thumb::before {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-cards a:focus .project-text {
+  opacity: 1;
+}
+
+.project-cards a:focus .project-thumb::before {
+  /* transform: translateY(0) don't work */
   opacity: 1;
 }
 
@@ -625,18 +643,20 @@ a .link.current {
   height: 44px;
   color: var(--white-color);
   fill: var(--icon-primary-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social .link {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-
   display: flex;
-}
 
-.team-link {
-  color: tomato;
-  background-color: var(--accent-color);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social .link:hover,
@@ -657,6 +677,10 @@ a .link.current {
   height: 12px;
   color: var(--white-color);
   fill: var(--primary-text-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .phone-icon {
@@ -665,6 +689,10 @@ a .link.current {
   height: 16px;
   color: var(--white-color);
   fill: var(--primary-text-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Эта часть на проверке */
@@ -698,7 +726,13 @@ a .link.current {
   border: none;
 
   padding: 6px 22px;
+
+  transition-property: background-color, color , box-shadow: 0px 0px 0px rgb(0 0 0 / 0%), 0px 0px 0px rgb(0 0 0 / 0%),
+    0px 0px 0px rgb(0 0 0 / 0%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .button:hover {
   background-color: var(--accent-color);
   color: var(--secondary-background-color);
@@ -801,6 +835,11 @@ p {
   height: 44px;
   color: var(--accent-color);
   fill: var(--icon-primary-color);
+  outline-color: var(--icon-primary-color);
+
+  transition-property: fill, outline-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client .link:hover .client-icon {
@@ -822,6 +861,10 @@ p {
 .map {
   color: var(--white-color);
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address .map:hover,
 .address .map:focus {
@@ -831,6 +874,10 @@ p {
 .address .link {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address .link:hover,
 .address .link:focus {
@@ -869,6 +916,11 @@ p {
   display: block;
   text-decoration: none;
   color: var(--primary-text-color);
+
+  transition-property: box-shadow: 0px 0px 0px rgb(0 0 0 / 0%), 0px 0px 0px rgb(0 0 0 / 0%),
+    0px 0px 0px rgb(0 0 0 / 0%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-cards a:hover {
